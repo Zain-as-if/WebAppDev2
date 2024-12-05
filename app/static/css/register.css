@@ -1,0 +1,109 @@
+/* General reset */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background: #121212; /* Dark background like IMDb */
+    color: #e6e6e6; /* Light text */
+}
+
+/* Form container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #121212;
+    padding: 20px;
+}
+
+/* Form styling */
+#register-form {
+    background: #1f1f1f; /* Slightly lighter dark background */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#register-form input[type="text"],
+#register-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #2a2a2a; /* Darker input background */
+    color: #e6e6e6;
+}
+
+#register-form input[type="text"]:focus,
+#register-form input[type="password"]:focus {
+    border-color: #f5c518; /* IMDb yellow focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(245, 197, 24, 0.7);
+}
+
+/* Button styling */
+#register-form button {
+    background: #f5c518; /* IMDb yellow */
+    color: #121212; /* Dark text for contrast */
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+#register-form button:hover {
+    background: #d4a917; /* Slightly darker yellow */
+}
+
+/* Link styling */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #f5c518; /* Yellow link color */
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Additional styling for spacing and text */
+#register-form .form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #e6e6e6;
+}
+
+.form-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f5c518;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}

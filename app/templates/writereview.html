@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Write Review</title>
+{% endblock %}
+{% block body %}
+<div class="form-container">
+    <div class="form-wrapper">
+        <h1 class="form-heading">Write Review</h1>
+        <form id="register-form" action="" method="POST">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.content.label }}<br>
+                {{ form.content(size=40) }}
+            </div>
+            <div>
+                {{ form.rating.label }}<br>
+                {{ form.rating(size=5) }}
+            </div>
+            <div>
+                {{ form.submit() }}
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>{{username}}'s Profile</title>
+{% endblock %}
+{% block body %}
+<body class="profile-body">
+    <div class="wrapper">
+        <h1>Hello {{ username }}</h1>
+        <br>
+        <div class="movies">
+            <h2>Watched Movies:</h2>
+            {% if watched_movies %}
+                <ul>
+                    {% for movie in watched_movies %}
+                        <li>{{ movie.title }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>You have not watched any movies yet.</p>
+            {% endif %}
+        </div>
+        <div class="reviews">
+            <h2>Your Reviews</h2>
+            <ul>
+                {% for review in reviews %}
+                <li>
+                    <strong>{{ review.movie.title }}:</strong>
+                    {{ review.content }} - Rating: {{ review.rating }}
+                    <form action="{{ url_for('edit_review', id=review.id) }}" method="POST" style="display:inline;">
+                        <button type="submit" class="edit-button">Edit</button>
+                    </form>
+                    <form action="{{ url_for('delete_reviews', id=review.id) }}" method="POST" style="display:inline;">
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+<body>
+{% endblock %}

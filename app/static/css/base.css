@@ -1,0 +1,46 @@
+/* styles.css */
+.navbar {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    background: #121212;
+    color: #e6e6e6;
+}
+
+.wrapper {
+    padding: 20px;
+}
+
+.delete-button {
+    border-radius: 12px;
+    background-color: #e74c4c;
+    color: white;
+    border: none;
+    margin-left: 5px;
+    margin-top: 8px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+.edit-button {
+    border-radius: 12px;
+    background-color: #3498db;
+    border: none;
+    margin-left: 5px;
+    margin-top: 8px;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: #2980b9;
+}

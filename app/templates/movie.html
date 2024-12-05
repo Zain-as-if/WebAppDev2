@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Movie</title>
+{% endblock %}
+{% block body %}
+<body>
+    <div class="wrapper">
+        <h1>{{ movie.title }}</h1>
+        <div class="movie-details">
+            {{ movie.genres }}<br>
+            {{ movie.runtime }}<br>
+            {{ movie.release_date }}
+        </div>
+        <br>
+        <button id="toggle-watchlist-btn" class="btn btn-primary" data-movie-id="{{ movie.id }}">
+            {% if movie in current_user.watched_movies %}
+                Remove from Watchlist
+            {% else %}
+                Add to Watchlist
+            {% endif %}
+        </button>
+        <br>
+        <br>
+        <a href="{{ url_for('writereview', id=movie.id) }}"><h2>Write a Review</h2></a>
+        <div class="review-list">
+            <ul>
+                {% for review in reviews %}
+                <li>
+                    <strong>{{ review.user.username }}:</strong>
+                    {{ review.content }} - Rating: {{ review.rating }}
+                </li>
+                {% else %}
+                <li>No reviews yet.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/watchlist.js') }}"></script>
+</body>
+{% endblock %}
